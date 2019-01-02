@@ -1,3 +1,17 @@
-# Vue/Vuetify Project Manager
+# Vue/Vuetify Project Manager Application
 
-Vue/Vuetify project manager application where the user can add new projects that can been seen in a dashboard.
+
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
+
+### Compiles and minifies for production
+```
+yarn run build
+```
