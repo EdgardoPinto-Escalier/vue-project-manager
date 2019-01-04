@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <h1>HOME PAGE</h1>
+  <div class="team">
+    <h1>TEAM</h1>
   </div>
 </template>
 
@@ -9,5 +9,3 @@ export default {
 
 }
 </script>
-
-
