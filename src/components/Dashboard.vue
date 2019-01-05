@@ -3,8 +3,26 @@
     <h1 class="grey--text">DASHBOARD</h1>
 
     <v-container class="my-5">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolor ab, commodi minima quasi nesciunt suscipit odit est quis deleniti quae amet rem, dolores architecto tempore libero voluptates quidem. Eligendi!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium molestiae excepturi natus odio, animi dolorem inventore incidunt qui praesentium totam nesciunt pariatur, veritatis enim ex reiciendis libero laboriosam sequi mollitia.</p>
+      <v-card flat class="pa-3">
+        <v-layout row wrap>
+          <v-flex xs12 md6>
+            <div class="caption grey--text">PROJECT TITLE</div>
+            <div>New DevOps Project</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">PERSON</div>
+            <div>Tom Williams</div>
+          </v-flex>
+          <v-flex xs6 sm4 md2>
+            <div class="caption grey--text">DUE ON</div>
+            <div>3rd Apr 2019</div>
+          </v-flex>
+          <v-flex xs2 sm4 md2>
+            <div class="caption grey--text">STATUS</div>
+            <div>Ongoing</div>
+          </v-flex>
+        </v-layout>
+      </v-card>
     </v-container>
     
   </div>
