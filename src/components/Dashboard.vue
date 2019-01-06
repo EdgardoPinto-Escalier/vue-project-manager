@@ -3,8 +3,8 @@
     <h1 class="grey--text">DASHBOARD</h1>
 
     <v-container class="my-5">
-      <v-card flat class="pa-3" v-for="project in projects" :key="project.person">
-        <v-layout row wrap>
+      <v-card flat v-for="project in projects" :key="project.person">
+        <v-layout row wrap :class="`pa-3 project ${project.status}`">
           <v-flex xs12 md6>
             <div class="caption grey--text">PROJECT TITLE</div>
             <div>{{ project.title }}</div>
@@ -22,6 +22,7 @@
             <div>{{ project.status }}</div>
           </v-flex>
         </v-layout>
+        <v-divider></v-divider>
       </v-card>
     </v-container>
     
@@ -42,5 +43,20 @@ export default {
   }
 }
 </script>
+
+<style>
+.project.complete {
+  border-left: 5px solid #3cd1c2;
+}
+
+.project.ongoing {
+  border-left: 5px solid orange;
+}
+
+.project.overdue {
+  border-left: 5px solid tomato;
+}
+</style>
+
 
 
