@@ -5,11 +5,11 @@
     <v-container class="my-5">
 
       <v-layout row class="mb-3">
-        <v-btn small flat color="grey">
+        <v-btn small flat color="grey" @click="sortBy('title')">
           <v-icon left small>folder</v-icon>
           <span class="caption text-lowercase">By Project Name</span>
         </v-btn>
-        <v-btn small flat color="grey">
+        <v-btn small flat color="grey" @click="sortBy('person')">
           <v-icon left small>person</v-icon>
           <span class="caption text-lowercase">By Person</span>
         </v-btn>
@@ -52,6 +52,11 @@ export default {
         { title: 'Vue.js Web Application', person: 'Jhon Curtis', due: '25 Oct 2018', status: 'complete', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt beatae consequuntur excepturi. Sapiente nisi, omnis doloremque repellat officiis dicta distinctio adipisci eius pariatur eligendi, accusantium dolor repudiandae enim reprehenderit fugiat'},
         { title: 'Laravel E-Comerce site', person: 'Peter Jackson', due: '12 Jan 2018', status: 'overdue', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt beatae consequuntur excepturi. Sapiente nisi, omnis doloremque repellat officiis dicta distinctio adipisci eius pariatur eligendi, accusantium dolor repudiandae enim reprehenderit fugiat'}
       ]
+    }
+  },
+  methods: {
+    sortBy(prop) {
+      this.projects.sort((a, b) => a[prop] < b[prop] ?  -1 : 1)
     }
   }
 }
