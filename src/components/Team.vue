@@ -36,7 +36,7 @@ export default {
       team: [
         { name: 'Edgardo Pinto-Escalier', role: 'Web Developer/DevOps', avatar: '/Edgardo.jpg'},
         { name: 'Tom Williams', role: 'UX/UI Designer', avatar: '/tom.jpg'},
-        { name: 'Laura Thomas', role: 'Senior Back-End Developer', avatar: '/laura.jpg'},
+        { name: 'Laura Thomas', role: 'Back-End Developer', avatar: '/laura.jpg'},
         { name: 'Paul Jones', role: 'SEO Specialist', avatar: '/paul.jpg'  },
         { name: 'Ann Wilson', role: 'Sales Manager', avatar: '/ann.jpg' }
       ]
