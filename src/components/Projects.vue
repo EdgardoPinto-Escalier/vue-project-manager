@@ -3,10 +3,18 @@
     <h1 class="grey--text">PROJECTS</h1>
 
     <v-container class="my-5">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolor ab, commodi minima quasi nesciunt suscipit odit est quis deleniti quae amet rem, dolores architecto tempore libero voluptates quidem. Eligendi!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium molestiae excepturi natus odio, animi dolorem inventore incidunt qui praesentium totam nesciunt pariatur, veritatis enim ex reiciendis libero laboriosam sequi mollitia.</p>
+      <v-expansion-panel>
+        <v-expansion-panel-content>
+          <div slot="header">Project Title</div>
+          <v-card>
+            <v-card-text class="px-4 grey--text">
+              <div class="font-weight-bold">Due on: xx.xx.xxxx</div>
+              <div>project text</div>
+            </v-card-text>
+          </v-card>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
     </v-container>
-
   </div>
 </template>
 

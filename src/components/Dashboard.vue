@@ -1,14 +1,14 @@
 <template>
   <div class="dashboard">
-    <h1 class="grey--text">DASHBOARD</h1>
+    
 
-    <v-container class="my-5">
-
+    <v-container class="my-3">
+      <h2 class="grey--text mb-3">DASHBOARD</h2>
       <v-layout row class="mb-3">
         <v-tooltip top>
           <v-btn small flat color="grey" @click="sortBy('title')" slot="activator">
             <v-icon left small>folder</v-icon>
-            <span class="caption text-lowercase">By Project Name</span>
+            <span class="caption">BY PROJECT NAME</span>
           </v-btn>
           <span>Sort by project name</span>
         </v-tooltip>
@@ -16,7 +16,7 @@
         <v-tooltip top>
           <v-btn small flat color="grey" @click="sortBy('person')" slot="activator">
             <v-icon left small>person</v-icon>
-            <span class="caption text-lowercase">By Person</span>
+            <span class="caption">BY PERSON</span>
           </v-btn>
           <span>Sort by person name</span>
         </v-tooltip>
