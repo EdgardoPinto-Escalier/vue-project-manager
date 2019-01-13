@@ -9,6 +9,12 @@
         <v-form class="px-3">
           <v-text-field label="PROJECT TITLE" v-model="title" prepend-icon="title"></v-text-field>
           <v-textarea label="PROJECT DESCRIPTION" v-model="description" prepend-icon="description"></v-textarea>
+
+          <v-menu>
+            <v-text-field :value="formattedDate" slot="activator" label="DUE DATE" prepend-icon="date_range"></v-text-field>
+            <v-date-picker v-model="due" no-title></v-date-picker>
+          </v-menu>
+          <v-spacer></v-spacer>
           <v-btn flat class="success mx-0 mt-3" @click="submit">ADD PROJECT</v-btn>
         </v-form>
       </v-card-text>
@@ -17,16 +23,24 @@
 </template>
 
 <script>
+import format from 'date-fns/format'
+
 export default {
   data() {
     return {
       title: '',
-      description: ''
+      description: '',
+      due: null
     }
   },
   methods: {
     submit() {
       console.log(this.title, this.description);
+    }
+  },
+  computed: {
+    formattedDate() {
+      return this.due ? format(this.due, 'Do MMM YYYY') : ''
     }
   }
 }
