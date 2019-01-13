@@ -6,15 +6,34 @@
         <h2>ADD A NEW PROJECT</h2>
       </v-card-title>
       <v-card-text>
-        <v-form class="px-3">
-          <v-text-field label="PROJECT TITLE" v-model="title" prepend-icon="title"></v-text-field>
-          <v-textarea label="PROJECT DESCRIPTION" v-model="description" prepend-icon="description"></v-textarea>
+        <v-form class="px-3" ref="form">
+          <v-text-field 
+            label="PROJECT TITLE" 
+            v-model="title" 
+            prepend-icon="title" 
+            :rules="formRules">
+          </v-text-field>
+
+          <v-textarea 
+            label="PROJECT DESCRIPTION" 
+            v-model="description" 
+            prepend-icon="description"
+            :rules="formRules">
+          </v-textarea>
 
           <v-menu>
-            <v-text-field :value="formattedDate" slot="activator" label="DUE DATE" prepend-icon="date_range"></v-text-field>
+            <v-text-field 
+              :value="formattedDate" 
+              slot="activator" 
+              label="DUE DATE" 
+              prepend-icon="date_range"
+              :rules="formRules">
+            </v-text-field>
             <v-date-picker v-model="due" no-title></v-date-picker>
           </v-menu>
+
           <v-spacer></v-spacer>
+
           <v-btn flat class="success mx-0 mt-3" @click="submit">ADD PROJECT</v-btn>
         </v-form>
       </v-card-text>
@@ -30,12 +49,17 @@ export default {
     return {
       title: '',
       description: '',
-      due: null
+      due: null,
+      formRules: [
+        v => v.length >= 3 || 'Minimum length is 3 characters'
+      ]
     }
   },
   methods: {
     submit() {
-      console.log(this.title, this.description);
+      if(this.$refs.form.validate()) {
+        console.log(this.title, this.description);
+      }
     }
   },
   computed: {
