@@ -43,6 +43,7 @@
 
 <script>
 import format from 'date-fns/format'
+import db from '@/config/db'
 
 export default {
   data() {
@@ -58,7 +59,17 @@ export default {
   methods: {
     submit() {
       if(this.$refs.form.validate()) {
-        console.log(this.title, this.description);
+        const project = {
+          title: this.title,
+          content: this.title,
+          due: format(this.due, 'Do MMM YYYY'),
+          person: 'Edgardo Pinto-Escalier',
+          status: 'ongoing'
+        }
+
+        db.collection('projects').add(project).then(() => {
+          console.log('Added to DB');
+        })
       }
     }
   },
