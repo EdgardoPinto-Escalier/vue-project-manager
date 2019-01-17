@@ -74,6 +74,7 @@ export default {
         db.collection('projects').add(project).then(() => {
           this.loading = false;
           this.closeDialog = false;
+          this.$emit('projectAdded')
         })
       }
     }
