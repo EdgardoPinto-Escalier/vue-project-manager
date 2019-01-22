@@ -20,23 +20,34 @@
 </template>
 
 <script>
+import db from '@/config/db'
+
 export default {
   data() {
     return {
-      projects: [
-        { title: 'Angular Site', person: 'Tom Williams', due: '19 Jan 2019', status: 'ongoing', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt beatae consequuntur excepturi. Sapiente nisi, omnis doloremque repellat officiis dicta distinctio adipisci eius pariatur eligendi, accusantium dolor repudiandae enim reprehenderit fugiat'},
-        { title: 'DevOps Project', person: 'Laura Thomas', due: '31 Dec 2018', status: 'complete', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt beatae consequuntur excepturi. Sapiente nisi, omnis doloremque repellat officiis dicta distinctio adipisci eius pariatur eligendi, accusantium dolor repudiandae enim reprehenderit fugiat'},
-        { title: 'Vue.js Web Application', person: 'Jhon Curtis', due: '25 Oct 2018', status: 'complete', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt beatae consequuntur excepturi. Sapiente nisi, omnis doloremque repellat officiis dicta distinctio adipisci eius pariatur eligendi, accusantium dolor repudiandae enim reprehenderit fugiat'},
-        { title: 'Laravel E-Comerce site', person: 'Peter Jackson', due: '12 Jan 2018', status: 'overdue', content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt beatae consequuntur excepturi. Sapiente nisi, omnis doloremque repellat officiis dicta distinctio adipisci eius pariatur eligendi, accusantium dolor repudiandae enim reprehenderit fugiat'}
-      ]
+      projects: []
     }
   },
   computed: {
     myProjects() {
       return this.projects.filter(project => {
-        return project.person === 'Tom Williams'
+        return project.person === 'Tom Williams' && project.status != 'complete'
       })
     }
+  },
+  created() {
+    db.collection('projects').onSnapshot(res => {
+      const changes = res.docChanges();
+
+      changes.forEach(change => {
+        if (change.type === 'added') {
+          this.projects.push({
+            ...change.doc.data(),
+            id: change.doc.id
+          })
+        }
+      })
+    })
   }
 }
 </script>

@@ -22,7 +22,7 @@
         </v-tooltip>
 
       </v-layout>
-      <v-card flat v-for="project in projects" :key="project.person">
+      <v-card flat v-for="project in projects" :key="project.title">
         <v-layout row wrap :class="`pa-3 project ${project.status}`">
           <v-flex xs12 md6>
             <div class="caption grey--text">PROJECT TITLE</div>
@@ -65,7 +65,7 @@ export default {
   },
   created() {
     db.collection('projects').onSnapshot(res => {
-      const changes = res.docChanges()
+      const changes = res.docChanges();
 
       changes.forEach(change => {
         if (change.type === 'added') {

@@ -34,7 +34,7 @@
 
           <v-spacer></v-spacer>
 
-          <v-btn flat class="success mx-0 mt-3" @click="submit" :loading="loading">ADD PROJECT</v-btn>
+          <v-btn flat @click="submit" class="success mx-0 mt-3" :loading="loading">ADD PROJECT</v-btn>
         </v-form>
       </v-card-text>
     </v-card>
@@ -65,7 +65,7 @@ export default {
 
         const project = {
           title: this.title,
-          content: this.title,
+          content: this.content,
           due: format(this.due, 'Do MMM YYYY'),
           person: 'Edgardo Pinto-Escalier',
           status: 'ongoing'
