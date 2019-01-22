@@ -16,7 +16,7 @@
 
           <v-textarea 
             label="PROJECT DESCRIPTION" 
-            v-model="description" 
+            v-model="content" 
             prepend-icon="description"
             :rules="formRules">
           </v-textarea>
@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       title: '',
-      description: '',
+      content: '',
       due: null,
       formRules: [
         v => v.length >= 3 || 'Minimum length is 3 characters'

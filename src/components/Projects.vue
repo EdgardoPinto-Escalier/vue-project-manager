@@ -31,7 +31,7 @@ export default {
   computed: {
     myProjects() {
       return this.projects.filter(project => {
-        return project.person === 'Tom Williams' && project.status != 'complete'
+        return project.person === 'Edgardo Pinto-Escalier' && project.status != 'complete'
       })
     }
   },
