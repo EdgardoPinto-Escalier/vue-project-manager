@@ -1,8 +1,9 @@
 <template>
   <div class="team">
-    <h1 class="grey--text">TEAM</h1>
+    
 
-    <v-container class="my-5">
+    <v-container class="my-3">
+      <h2 class="grey--text mb-3">TEAM</h2>
       <v-layout row wrap>
         <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
           <v-card flat class="text-xs-center ma-3">

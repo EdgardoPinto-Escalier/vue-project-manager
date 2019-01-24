@@ -1,7 +1,5 @@
 <template>
   <div class="dashboard">
-    
-
     <v-container class="my-3">
       <h2 class="grey--text mb-3">DASHBOARD</h2>
       <v-layout row class="mb-3">
